@@ -1,0 +1,96 @@
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.welcome-screen {
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  position: absolute;
+  /* animation: slide-out-up 1s forwards;
+  animation-delay: 2s; */
+}
+
+.welcome-message {
+  z-index: 3;
+  position: absolute;
+}
+
+.zen-sajnani {
+  position: absolute;
+  z-index: 4;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 600;
+  /* transform: translateY(50vh); */
+  /* animation: zen-sajnani-welcome 1s forwards;
+  animation-delay: 2s; */
+}
+
+.zen-main-img {
+  /* transform: translateX(-150vw); */
+
+  /* animation: slide-in-animation 1s forwards; */
+  /* animation-delay: 3s; */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(3px); /* apply the blur */
+  backdrop-filter: blur(5px); /* apply the blur */
+  pointer-events: none; /* make the pseudo class click-through */
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background: no-repeat center center;
+  background-image: url("../images/Zen-Hackathon-Photo-Full.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.slide-in {
+  animation: slide-in-animation 1s forwards;
+}
+
+@keyframes slide-in-animation {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes zen-sajnani-welcome {
+  0% {
+    color: white;
+    transform: translateY(50vh);
+  }
+
+  80% {
+    color: white;
+  }
+
+  100% {
+    color: inherit;
+    transform: translateY(0);
+  }
+}
